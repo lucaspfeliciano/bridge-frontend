@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import api from './service/api';
+import './App.css';
 
 function App() {
 
@@ -19,7 +20,8 @@ function App() {
     }
 
   return (
-    <>
+    <div className="container">
+    <div className="content">
             <p>
             Insert a number
             </p>
@@ -36,13 +38,14 @@ function App() {
                 <button className= "btn" type= "submit">Go</button>
             </form>
             {isPrime ? 
-            <>
+            <div className="result">
               <p> O número é primo? {isPrime}</p>
               <p>Seus divisores são: {dividers.map(numero => <p>{numero}</p>)}</p>
-            </>
+            </div>
              : 
              ''}
-        </>
+        </div>
+        </div>
   );
 }
 
