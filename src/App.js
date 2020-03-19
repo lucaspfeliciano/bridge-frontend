@@ -10,29 +10,32 @@ function App() {
 
     async function handleSubmit(event) {
       event.preventDefault();
-      const response = await api.post('/divide', {number});
-      if(response.data.isPrime == true) {
-        setIsPrime('Sim');
+
+      if(number < 1) {
+        alert("Insira um número inteiro positivo")
       } else {
-        setIsPrime('Não');
+        const response = await api.post('/divide', {number});
+        if(response.data.isPrime === true) {
+          setIsPrime('É');
+        } else {
+          setIsPrime('NÃO É');
+        }
+        setDividers(response.data.dividers);
       }
-      setDividers(response.data.dividers);
     }
 
   return (
     <div className="container">
     <div className="content">
-            <p>
-            Insert a number
-            </p>
-
+            <h3>DESCUBRA OS DIVISORES:</h3>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="number">Number *</label>
+                <label htmlFor="number">Número *</label>
                 <input 
                     type="number" 
                     id="number" 
-                    placeholder="Insert a number"
+                    placeholder="Insira um número inteiro"
                     value= {number}
+                    required
                     onChange={event => setNumber(event.target.value)}
                 />
                 <button className= "btn" type= "submit">Go</button>
@@ -40,8 +43,11 @@ function App() {
         </div>
         {isPrime ? 
             <div className="result">
-              <p> O número é primo? {isPrime}</p>
-              <p>Seus divisores são: {dividers.map(numero => <p>{numero}</p>)}</p>
+              <h3>Número {number}:</h3>
+              <p> O número {number} <strong>{isPrime}</strong> primo e seus divisores são:</p>
+              <ul>
+              {dividers.map(numero => <li>{numero}</li>)}
+              </ul>
             </div>
              : 
              ''}

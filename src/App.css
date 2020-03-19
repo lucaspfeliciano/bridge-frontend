@@ -12,7 +12,7 @@ html, body, #root {
 }
 
 body {
-  background: #000 url('./assets/background.jpg') no-repeat;
+  background: rgb(96, 188, 224);
   background-size: cover;
   -webkit-font-smoothing: antialiased !important;
 }
@@ -39,6 +39,12 @@ body, input, button {
   padding: 30px;
 }
 
+h3 {
+  color: #4711c4;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 .content > p {
   font-size: 22px;
   line-height: 30px;
@@ -49,14 +55,16 @@ body, input, button {
   width: 100%;
   background: #fff;
   margin-top: 50px;
+  margin-bottom: 50px;
   border-radius: 4px;
   padding: 30px;
 }
 
-.result p {
-  font-size: 22px;
-  line-height: 30px;
-  margin-bottom: 30px;
+ .result p {
+  font-size: 14px;
+  color: #444;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .content form {
@@ -69,12 +77,6 @@ body, input, button {
   color: #444;
   font-weight: bold;
   margin-bottom: 8px;
-}
-
-.content form label span {
-  font-weight: normal;
-  color: #999;
-  font-size: 12px;
 }
 
 .content form input {
@@ -94,11 +96,11 @@ body, input, button {
   padding: 0 20px;
   font-size: 16px;
   font-weight: bold;
-  background: #f05a5b;
+  background: #4711c4;
   color: #fff;
   cursor: pointer;
 }
 
 .content button:hover {
-  background: #e14f50;
+  background: #6c51e4;
 }
