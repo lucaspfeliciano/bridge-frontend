@@ -45,7 +45,7 @@ body, input, button {
   margin-bottom: 30px;
 }
 
-.content.result {
+.result {
   width: 100%;
   background: #fff;
   margin-top: 50px;
@@ -53,7 +53,7 @@ body, input, button {
   padding: 30px;
 }
 
-.content.result p {
+.result p {
   font-size: 22px;
   line-height: 30px;
   margin-bottom: 30px;

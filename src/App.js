@@ -37,14 +37,14 @@ function App() {
                 />
                 <button className= "btn" type= "submit">Go</button>
             </form>
-            {isPrime ? 
+        </div>
+        {isPrime ? 
             <div className="result">
               <p> O número é primo? {isPrime}</p>
               <p>Seus divisores são: {dividers.map(numero => <p>{numero}</p>)}</p>
             </div>
              : 
              ''}
-        </div>
         </div>
   );
 }
